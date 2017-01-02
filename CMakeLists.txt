@@ -13,7 +13,7 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g -std=c++0x -Wall -Wno-varargs -fPIC")
 # set general libraries include directories
 include_directories(
     ${INCLUDE_DIRECTORIES}
-    src/cpp
+    src
     /usr/include/python3.5
     # TODO: eventually replace with proper install paths
     ${CMAKE_BINARY_DIR}/../../ArcaneCore/ArcaneCore/src/cpp
@@ -23,6 +23,7 @@ include_directories(
 # set general libraries link directories
 link_directories(
     ${LINK_DIRECTORIES}
+    build/linux_x86/
     /usr/lib/python3.5/
     # TODO: eventually replace with proper library paths
     ${CMAKE_BINARY_DIR}/../../ArcaneCore/ArcaneCore/build/linux_x86
@@ -30,5 +31,9 @@ link_directories(
     ${CMAKE_BINARY_DIR}/../../MetaEngine/MetaEngine/build/linux_x86
 )
 
-# build tests
+# sovereign
+add_subdirectory(src/riptide/sovereign/_buildsys)
+# riptide client
+add_subdirectory(src/riptide/client/_buildsys)
+# tests
 add_subdirectory(tests)

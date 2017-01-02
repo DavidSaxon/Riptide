@@ -1,4 +1,4 @@
-#include "riptide/sovereign/prototyping/pattern/HistoricalPatternMatching.hpp"
+#include "riptide/sovereign/prototyping/patterns/HistoricalPatternMatching.hpp"
 
 namespace rip
 {

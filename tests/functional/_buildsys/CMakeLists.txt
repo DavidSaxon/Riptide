@@ -13,9 +13,11 @@ set(FUNCTIONAL_SRC
 
 # build the functional tests executable
 add_executable(functional ${FUNCTIONAL_SRC})
+
 # link libraries to the functional tests
 target_link_libraries(functional
     arcanecore_test
     arcanecore_io
     arcanecore_base
+    sovereign
 )
