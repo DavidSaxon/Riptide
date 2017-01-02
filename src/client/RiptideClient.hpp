@@ -86,6 +86,11 @@ private:
      * \returns Whether the initialisation routines completed successfully.
      */
     bool run_initialisation_routines();
+
+    /*!
+     * \brief Initialises operating system specific functionality.
+     */
+    void os_initialisation_subroutine();
 };
 
 } // namespace rip_c

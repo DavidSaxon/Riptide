@@ -36,8 +36,14 @@ typedef std::unique_ptr<metaengine::Variant> VariantPtr;
 //                                   CONSTANTS
 //------------------------------------------------------------------------------
 
+/*!
+ * \brief The path to the Riptide metadata directory.
+ */
 extern const arc::io::sys::Path META_DIR;
-extern const arc::io::sys::Path META_CORE_DIR;
+/*!
+ * \brief The path to the Riptide client metadata directory.
+ */
+extern const arc::io::sys::Path META_CLIENT_DIR;
 
 } // namespace meta
 } // namespace util
