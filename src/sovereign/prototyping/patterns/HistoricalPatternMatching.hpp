@@ -1,3 +1,8 @@
+/*!
+ * \file
+ * \author David Saxon
+ * \brief Pattern matching algorithms which only use historical data.
+ */
 #ifndef RIPTIDE_SOVEREIGN_PROTOTYPING_PATTERNS_HISTORICALPATTERNMATCHING_HPP_
 #define RIPTIDE_SOVEREIGN_PROTOTYPING_PATTERNS_HISTORICALPATTERNMATCHING_HPP_
 
@@ -5,8 +10,6 @@
 
 #include <arcanecore/base/Types.hpp>
 
-namespace rip
-{
 namespace svrn
 {
 namespace proto
@@ -25,6 +28,5 @@ void historical_single_pattern_match(
 
 } // namespace proto
 } // namespace svrn
-} // namespace rip
 
 #endif

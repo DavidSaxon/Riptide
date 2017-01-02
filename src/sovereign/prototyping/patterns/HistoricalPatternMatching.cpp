@@ -1,7 +1,5 @@
-#include "riptide/sovereign/prototyping/patterns/HistoricalPatternMatching.hpp"
+#include "sovereign/prototyping/patterns/HistoricalPatternMatching.hpp"
 
-namespace rip
-{
 namespace svrn
 {
 namespace proto
@@ -17,4 +15,3 @@ void historical_single_pattern_match(
 
 } // namespace proto
 } // namespace svrn
-} // namespace rip

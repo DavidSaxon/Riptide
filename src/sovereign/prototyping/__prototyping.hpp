@@ -1,8 +1,11 @@
+/*!
+ * \file
+ * \brief Documents the svrn::proto namespace.
+ * \author David Saxon
+ */
 #ifndef RIPTIDE_SOVEREIGN_PROTOTYPING_HPP_
 #define RIPTIDE_SOVEREIGN_PROTOTYPING_HPP_
 
-namespace rip
-{
 namespace svrn
 {
 
@@ -15,6 +18,5 @@ namespace proto
 } // namespace proto
 
 } // namespace svrn
-} // namespace rip
 
 #endif

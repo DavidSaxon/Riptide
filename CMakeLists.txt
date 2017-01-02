@@ -32,8 +32,8 @@ link_directories(
 )
 
 # sovereign
-add_subdirectory(src/riptide/sovereign/_buildsys)
+add_subdirectory(src/sovereign/__buildsys)
 # riptide client
-add_subdirectory(src/riptide/client/_buildsys)
+add_subdirectory(src/client/__buildsys)
 # tests
 add_subdirectory(tests)

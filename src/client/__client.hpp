@@ -1,16 +1,16 @@
+/*!
+ * \file
+ * \brief Documents the rip_c namespace.
+ * \author David Saxon
+ */
 #ifndef RIPTIDE_CLIENT_HPP_
 #define RIPTIDE_CLIENT_HPP_
-
-namespace rip
-{
 
 /*!
  * \brief The client module used to interact with the Riptide server module.
  */
-namespace client
+namespace rip_c
 {
-} // namespace client
-
-} // namespace rip
+} // namespace rip_c
 
 #endif

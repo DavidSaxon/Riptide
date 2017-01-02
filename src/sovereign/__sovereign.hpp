@@ -1,8 +1,10 @@
+/*!
+ * \file
+ * \brief Documents the svrn namespace.
+ * \author David Saxon
+ */
 #ifndef RIPTIDE_SOVEREIGN_HPP_
 #define RIPTIDE_SOVEREIGN_HPP_
-
-namespace rip
-{
 
 /*!
  * \brief The global namespace of Sovereign.
@@ -10,7 +12,5 @@ namespace rip
 namespace svrn
 {
 } // namespace svrn
-
-} // namespace rip
 
 #endif

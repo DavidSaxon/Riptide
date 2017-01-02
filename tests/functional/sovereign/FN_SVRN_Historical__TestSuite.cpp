@@ -2,7 +2,7 @@
 
 ARC_TEST_MODULE(functional.sovereign.historical)
 
-#include <riptide/sovereign/prototyping/patterns/HistoricalPatternMatching.hpp>
+#include <sovereign/prototyping/patterns/HistoricalPatternMatching.hpp>
 
 namespace
 {
@@ -37,7 +37,7 @@ ARC_TEST_UNIT_FIXTURE(simple, SimpleFixture)
     {
         std::vector<arc::uint32> result;
 
-        rip::svrn::proto::historical_single_pattern_match(
+        svrn::proto::historical_single_pattern_match(
             fixture->patterns[i],
             fixture->next[i].size(),
             result
