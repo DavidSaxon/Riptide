@@ -143,12 +143,17 @@ void load_fonts()
         )
     );
 
-    // TODO: need file system list for collated resources...
-    // TODO: can this include collated and real resources?
-
     // iterate over each file in the fonts directory and add to the database
-    for(const arc::io::sys::Path& path : arc::io::sys::list_rec(font_directory))
+    for(const arc::io::sys::Path& path :
+        rip_c::global::res::accessor->list_rec(font_directory))
     {
+        // skip directories
+        if(arccol::Accessor::force_real_resources &&
+           !arc::io::sys::is_file(path))
+        {
+            continue;
+        }
+
         // check that this font is a supported format
         arc::str::UTF8String extension(path.get_extension());
         if (std::find(

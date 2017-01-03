@@ -44,7 +44,7 @@ extern arclog::Input* input;
 } // namespace logging
 
 /*!
- * \brief Special case reference to the logger for convenience.
+ * \brief Convenience reference to the logger.
  *
  * Points to rip_c::logging::input
  */
