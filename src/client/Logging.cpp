@@ -12,11 +12,9 @@
 
 #include <json/json.h>
 
-#include <metaengine/visitors/Path.hpp>
-#include <metaengine/visitors/Primitive.hpp>
-#include <metaengine/visitors/String.hpp>
+#include <metaengine/visitors/Shorthand.hpp>
 
-#include "client/MetaCompiled.hpp"
+#include "client/CL_MetaCompiled.hpp"
 
 // allows us to use std::localtime, without warning it's unsafe, maybe this is
 // bad idea, but I can't imagine it being too detrimental since it's only being
@@ -111,7 +109,7 @@ void initialisation_routine()
     arc::io::sys::Path meta_path(util::meta::META_CLIENT_DIR);
     meta_path << "logging" << "logging.json";
 
-    // built in-memory data
+    // built-in memory data
     static const arc::str::UTF8String meta_compiled(RIP_C_METACOMPILED_LOGGING);
 
     // construct the variant
@@ -193,10 +191,7 @@ static void init_std_output()
     // stdoutput
     std_output = new arclog::StdOutput();
     // enabled?
-    bool enabled = *metadata->get(
-        "outputs.StdOutput.enabled",
-        metaengine::BoolV::instance()
-    );
+    bool enabled = *metadata->get("outputs.StdOutput.enabled", ME_BOOLV);
     std_output->set_enabled(enabled);
     // verbosity
     std_output->set_verbosity_level(*metadata->get(
@@ -204,10 +199,7 @@ static void init_std_output()
         ArcLogVerbosityV::instance()
     ));
     // use ansi?
-    bool use_ansi_b = *metadata->get(
-        "outputs.StdOutput.use_ansi",
-        metaengine::BoolV::instance()
-    );
+    bool use_ansi_b = *metadata->get("outputs.StdOutput.use_ansi", ME_BOOLV);
     arclog::StdOutput::UseANSI use_ansi = arclog::StdOutput::USEANSI_NEVER;
     if(use_ansi_b)
     {
@@ -228,20 +220,16 @@ static void init_std_output()
 static void init_file_output()
 {
     // build the path to write logs to
-    arc::io::sys::Path log_path(*metadata->get(
-        "outputs.FileOutput.base_path",
-        metaengine::PathV::instance()
-    ));
+    arc::io::sys::Path log_path =
+        *metadata->get("outputs.FileOutput.base_path", ME_PATHV);
 
     // get time
     std::chrono::time_point<std::chrono::system_clock> now =
         std::chrono::system_clock::now();
     time_t now_t = std::chrono::system_clock::to_time_t(now);
     // get the syntax to read the date as
-    arc::str::UTF8String date_syntax(*metadata->get(
-        "outputs.FileOutput.path_date_syntax",
-        metaengine::UTF8StringV::instance()
-    ));
+    arc::str::UTF8String date_syntax =
+        *metadata->get("outputs.FileOutput.path_date_syntax", ME_U8STRV);
     // get the date
     char date_buffer[50];
     strftime(
@@ -252,10 +240,8 @@ static void init_file_output()
     );
     log_path << date_buffer;
     // get the syntax to read the time as
-    arc::str::UTF8String time_syntax(*metadata->get(
-        "outputs.FileOutput.path_time_syntax",
-        metaengine::UTF8StringV::instance()
-    ));
+    arc::str::UTF8String time_syntax =
+        *metadata->get("outputs.FileOutput.path_time_syntax", ME_U8STRV);
     // get the time
     char time_buffer[50];
     strftime(
@@ -266,10 +252,8 @@ static void init_file_output()
     );
     arc::str::UTF8String file_name(time_buffer);
     // get the file extension
-    arc::str::UTF8String file_extension(*metadata->get(
-        "outputs.FileOutput.file_extension",
-        metaengine::UTF8StringV::instance()
-    ));
+    arc::str::UTF8String file_extension =
+        *metadata->get("outputs.FileOutput.file_extension", ME_U8STRV);
     file_name << "." << file_extension;
     // update the path
     log_path << file_name;
@@ -278,10 +262,7 @@ static void init_file_output()
     file_output = new arclog::FileOutput(log_path, false);
 
     // enabled?
-    bool enabled = *metadata->get(
-        "outputs.FileOutput.enabled",
-        metaengine::BoolV::instance()
-    );
+    bool enabled = *metadata->get("outputs.FileOutput.enabled", ME_BOOLV);
     // need to test this since enabling the file writer opens it
     try
     {

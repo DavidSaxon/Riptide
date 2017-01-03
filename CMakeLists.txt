@@ -10,6 +10,11 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/build/linux_x86)
 # compiler flags
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g -std=c++0x -Wall -Wno-varargs -fPIC")
 
+# require QT
+find_package(Qt5Core REQUIRED)
+find_package(Qt5Gui REQUIRED)
+find_package(Qt5Widgets REQUIRED)
+
 # set general libraries include directories
 include_directories(
     ${INCLUDE_DIRECTORIES}
@@ -19,6 +24,7 @@ include_directories(
     ${CMAKE_BINARY_DIR}/../../ArcaneCore/ArcaneCore/src/cpp
     ${CMAKE_BINARY_DIR}/../../ArcaneLog/ArcaneLog/src/cpp
     ${CMAKE_BINARY_DIR}/../../MetaEngine/MetaEngine/src/cpp
+    ${CMAKE_BINARY_DIR}/../../ArcaneCollate/ArcaneCollate/src/cpp
 )
 # set general libraries link directories
 link_directories(
@@ -29,6 +35,7 @@ link_directories(
     ${CMAKE_BINARY_DIR}/../../ArcaneCore/ArcaneCore/build/linux_x86
     ${CMAKE_BINARY_DIR}/../../ArcaneLog/ArcaneLog/build/linux_x86
     ${CMAKE_BINARY_DIR}/../../MetaEngine/MetaEngine/build/linux_x86
+    ${CMAKE_BINARY_DIR}/../../ArcaneCollate/ArcaneCollate/build/linux_x86
 )
 
 # sovereign

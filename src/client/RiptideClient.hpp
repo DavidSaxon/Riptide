@@ -56,15 +56,6 @@ public:
 private:
 
     //--------------------------------------------------------------------------
-    //                          PRIVATE MEMBER FUNCTIONS
-    //--------------------------------------------------------------------------
-
-    /*!
-     * \brief Signifies whether the Riptide Client has been initialised.
-     */
-    bool m_initialised;
-
-    //--------------------------------------------------------------------------
     //                                CONSTRUCTORS
     //--------------------------------------------------------------------------
 
@@ -72,25 +63,6 @@ private:
      * \brief Constructs a new instance of the RiptideClient.
      */
     RiptideClient();
-
-    //--------------------------------------------------------------------------
-    //                          PRIVATE MEMBER FUNCTIONS
-    //--------------------------------------------------------------------------
-
-    /*!
-     * \brief Runs the initialisation routines of the Riptide Client.
-     *
-     * The initialisation routines are the first integral parts of the Riptide
-     * Client to be started.
-     *
-     * \returns Whether the initialisation routines completed successfully.
-     */
-    bool run_initialisation_routines();
-
-    /*!
-     * \brief Initialises operating system specific functionality.
-     */
-    void os_initialisation_subroutine();
 };
 
 } // namespace rip_c
