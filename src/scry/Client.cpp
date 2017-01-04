@@ -1,7 +1,10 @@
 #include "scry/Client.hpp"
 
-#include "scry/common/SC_Boot.hpp"
-#include "scry/common/SC_Logging.hpp"
+#include <QtWidgets/QApplication>
+
+#include "scry/base/SC_Boot.hpp"
+#include "scry/base/SC_Logging.hpp"
+#include "scry/gui/startup/SplashScreen.hpp"
 
 namespace scry
 {
@@ -30,6 +33,9 @@ Client* Client::get_instance()
 
 int Client::execute()
 {
+    // instantiate the Qt application
+    int argc = 0;
+    QApplication app(argc, nullptr);
 
     // initialise
     if(!scry::boot::initialisation_routine())
@@ -39,14 +45,17 @@ int Client::execute()
         return -1;
     }
 
-    // start splash screen
-    // TODO:
-    // boot
-    // TODO: this should be assigned to the splash screen somehow
-    // run
-    // TODO:
+    // create the instance of the splash screen
+    scry::gui::startup::SplashScreen* splash =
+        new scry::gui::startup::SplashScreen();
+    splash->show();
 
-    // TODO: this may need to be triggered elsewhere..
+    // TODO: assign startup routines
+
+    // begin execution of the Qt application, we will only regain control on
+    // exit
+    QApplication::exec();
+
     // shutdown
     if(!scry::boot::shutdown_routine())
     {

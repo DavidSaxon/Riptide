@@ -38,6 +38,10 @@ link_directories(
     ${CMAKE_BINARY_DIR}/../../ArcaneCollate/ArcaneCollate/build/linux_x86
 )
 
+# meta_qt
+add_subdirectory(src/meta_qt/__buildsys)
+# common
+add_subdirectory(src/common/__buildsys)
 # sovereign
 add_subdirectory(src/sovereign/__buildsys)
 # scry

@@ -1,4 +1,4 @@
-#include "scry/common/SC_Global.hpp"
+#include "scry/base/SC_Global.hpp"
 
 #include <arcanecollate/Accessor.hpp>
 
@@ -10,7 +10,9 @@ namespace global
 namespace meta
 {
 
-util::meta::DocumentPtr resource_locations;
+const arc::io::sys::Path META_SCRY_DIR(
+    {arc::str::UTF8String("meta"), arc::str::UTF8String("scry")});
+rip::util::meta::DocumentPtr resource_locations;
 
 } // namespace meta
 

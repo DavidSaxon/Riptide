@@ -1,0 +1,8 @@
+// directories where to find the Riptide common resources
+{
+    "use_collated": false,
+    "resource_path": ["res", "common"],
+    "resources_toc": ["@{resource_path}", "resources.toc"],
+    "images": ["@{resource_path}", "images"],
+    "images_logo": ["@{images}", "logo"]
+}

@@ -6,9 +6,7 @@
 #ifndef RIPTIDE_SCRY_GUI_GLOBAL_HPP_
 #define RIPTIDE_SCRY_GUI_GLOBAL_HPP_
 
-#include "scry/util/MetaUtil.hpp"
-
-class QApplication;
+#include "common/util/MetaUtil.hpp"
 
 namespace scry
 {
@@ -33,18 +31,18 @@ namespace meta
 /*!
  * \brief The MetaEngine Document for the directories where resources are found.
  */
-extern util::meta::DocumentPtr resource_locations;
+extern rip::util::meta::DocumentPtr resource_locations;
 /*!
  * \brief The MetaEngine Document containing data about fonts.
  */
-extern util::meta::DocumentPtr fonts;
-
-} // namespace meta
+extern rip::util::meta::DocumentPtr fonts;
 
 /*!
- * \brief The Qt application.
+ * \brief The MetaEngine Document containing data about startup widgets.
  */
-extern QApplication* qt_application;
+extern rip::util::meta::DocumentPtr widgets_startup;
+
+} // namespace meta
 
 } // namespace global
 } // namespace gui

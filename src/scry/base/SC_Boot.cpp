@@ -1,4 +1,4 @@
-#include "scry/common/SC_Boot.hpp"
+#include "scry/base/SC_Boot.hpp"
 
 #include <arcanecore/base/Preproc.hpp>
 
@@ -10,9 +10,11 @@
     #include <windows.h>
 #endif
 
-#include "scry/common/SC_Global.hpp"
-#include "scry/common/SC_Logging.hpp"
-#include "scry/common/SC_MetaCompiled.hpp"
+#include "common/base/RT_Boot.hpp"
+#include "common/base/RT_Global.hpp"
+#include "scry/base/SC_Global.hpp"
+#include "scry/base/SC_Logging.hpp"
+#include "scry/base/SC_MetaCompiled.hpp"
 #include "scry/gui/GUI_Boot.hpp"
 
 namespace scry
@@ -72,8 +74,9 @@ bool initialisation_routine()
     try
     {
         scry::logging::initialisation_routine();
-        meta_initialisation_subroutine();
         os_initialisation_subroutine();
+        rip::boot::initialisation_routine();
+        meta_initialisation_subroutine();
         resource_access_initialisation_subroutine();
         scry::gui::boot::initialisation_routine();
     }
@@ -117,6 +120,7 @@ bool shutdown_routine()
     try
     {
         scry::gui::boot::shutdown_routine();
+        rip::boot::shutdown_routine();
     }
     catch(const arc::ex::ArcException& exc)
     {
@@ -160,7 +164,7 @@ void meta_initialisation_subroutine()
     scry::logger->debug << "Initialising common MetaEngine data" << std::endl;
 
     // build the path to the scry metadata directory
-    arc::io::sys::Path scry_meta_path(util::meta::META_SCRY_DIR);
+    arc::io::sys::Path scry_meta_path(scry::global::meta::META_SCRY_DIR);
     // build the path to the scry resources metadata directory
     arc::io::sys::Path resources_meta_path(scry_meta_path);
     resources_meta_path << "resources";
@@ -183,6 +187,11 @@ void resource_access_initialisation_subroutine()
 {
     scry::logger->debug << "Initialising resource access" << std::endl;
 
+    // get the path to common resources table of contents
+    arc::io::sys::Path common_toc_path(
+        *scry::global::meta::resource_locations->get("resources_toc", ME_PATHV)
+    );
+
     // get the path to the resources table of contents
     arc::io::sys::Path toc_path(
         *scry::global::meta::resource_locations->get("resources_toc", ME_PATHV)
@@ -191,9 +200,10 @@ void resource_access_initialisation_subroutine()
     // instantiate the accessor
     scry::global::res::accessor.reset(new arccol::Accessor(toc_path));
 
+    // TODO: use from common!
     // should resource from collated sources be used
     bool use_collated =
-        *scry::global::meta::resource_locations->get("use_collated", ME_BOOLV);
+        *rip::global::meta::resource_locations->get("use_collated", ME_BOOLV);
     arccol::Accessor::force_real_resources = !use_collated;
     if(!use_collated)
     {

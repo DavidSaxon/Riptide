@@ -1,7 +1,5 @@
 #include "scry/gui/GUI_Global.hpp"
 
-#include <QtWidgets/QApplication>
-
 namespace scry
 {
 namespace gui
@@ -12,12 +10,11 @@ namespace global
 namespace meta
 {
 
-util::meta::DocumentPtr resource_locations;
-util::meta::DocumentPtr fonts;
+rip::util::meta::DocumentPtr resource_locations;
+rip::util::meta::DocumentPtr fonts;
+rip::util::meta::DocumentPtr widgets_startup;
 
 } // namespace meta
-
-QApplication* qt_application = nullptr;
 
 } // namespace global
 } // namespace gui

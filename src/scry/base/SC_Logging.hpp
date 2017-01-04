@@ -3,13 +3,13 @@
  * \author David Saxon
  * \brief Logging for Scry using ArcaneLog.
  */
-#ifndef RIPTIDE_SCRY_COMMON_LOGGING_HPP_
-#define RIPTIDE_SCRY_COMMON_LOGGING_HPP_
+#ifndef RIPTIDE_SCRY_BASE_LOGGING_HPP_
+#define RIPTIDE_SCRY_BASE_LOGGING_HPP_
 
 #include <arcanelog/Input.hpp>
 #include <arcanelog/Verbosity.hpp>
 
-#include "scry/util/MetaUtil.hpp"
+#include "common/util/MetaUtil.hpp"
 
 //------------------------------------------------------------------------------
 //                              FORWARD DECLARATIONS
@@ -65,7 +65,7 @@ extern arclog::FileOutput* file_output;
 /*!
  * \brief The MetaEngine Variant for logging configuration.
  */
-extern util::meta::VariantPtr metadata;
+extern rip::util::meta::VariantPtr metadata;
 
 //------------------------------------------------------------------------------
 //                                   FUNCTIONS

@@ -1,0 +1,104 @@
+{
+   name
+   Memcheck:Leak
+   ...
+   obj:/usr/lib/x86_64-linux-gnu/libpython3.4m.so.1.0
+   ...
+}
+
+{
+   name
+   Memcheck:Addr4
+   ...
+   obj:/usr/lib/x86_64-linux-gnu/libpython3.4m.so.1.0
+   ...
+}
+
+{
+   name
+   Memcheck:Cond
+   ...
+   obj:/usr/lib/x86_64-linux-gnu/libpython3.4m.so.1.0
+   ...
+}
+
+{
+   name
+   Memcheck:Value8
+   ...
+   obj:/usr/lib/x86_64-linux-gnu/libpython3.4m.so.1.0
+   ...
+}
+
+{
+   name
+   Memcheck:Cond
+   ...
+   obj:/usr/lib/x86_64-linux-gnu/libgtk-x11-2.0.so.0.2400.30
+   ...
+}
+
+
+{
+   name
+   Memcheck:Leak
+   ...
+   obj:/usr/lib/x86_64-linux-gnu/libQt5Gui.so.5.5.1
+   ...
+}
+
+{
+   name
+   Memcheck:Leak
+   ...
+   obj:/usr/lib/x86_64-linux-gnu/libgtk-x11-2.0.so.0.2400.30
+   ...
+}
+
+{
+   name
+   Memcheck:Leak
+   ...
+   obj:/usr/lib/x86_64-linux-gnu/libpangocairo-1.0.so.0.3800.1
+   ...
+}
+
+{
+   name
+   Memcheck:Leak
+   ...
+   obj:/usr/lib/x86_64-linux-gnu/libgio-2.0.so.0.4800.1
+   ...
+}
+
+{
+   name
+   Memcheck:Leak
+   ...
+   obj:/usr/lib/x86_64-linux-gnu/libgdk-x11-2.0.so.0.2400.30
+   ...
+}
+
+{
+   name
+   Memcheck:Leak
+   ...
+   obj:/usr/lib/x86_64-linux-gnu/libfontconfig.so.1.9.0
+   ...
+}
+
+{
+   name
+   Memcheck:Leak
+   ...
+   obj:/usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.4800.1
+   ...
+}
+
+{
+   name
+   Memcheck:Leak
+   ...
+   obj:/usr/lib/x86_64-linux-gnu/gio/modules/libdconfsettings.so
+   ...
+}

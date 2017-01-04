@@ -3,8 +3,8 @@
  * \author David Saxon
  * \brief Routines relating to the boot up and boot down of Scry.
  */
-#ifndef RIPTIDE_SCRY_COMMON_BOOT_HPP_
-#define RIPTIDE_SCRY_COMMON_BOOT_HPP_
+#ifndef RIPTIDE_SCRY_BASE_BOOT_HPP_
+#define RIPTIDE_SCRY_BASE_BOOT_HPP_
 
 namespace scry
 {

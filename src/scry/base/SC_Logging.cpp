@@ -1,4 +1,4 @@
-#include "scry/common/SC_Logging.hpp"
+#include "scry/base/SC_Logging.hpp"
 
 #include <chrono>
 #include <ctime>
@@ -14,7 +14,8 @@
 
 #include <metaengine/visitors/Shorthand.hpp>
 
-#include "scry/common/SC_MetaCompiled.hpp"
+#include "scry/base/SC_Global.hpp"
+#include "scry/base/SC_MetaCompiled.hpp"
 
 // allows us to use std::localtime, without warning it's unsafe, maybe this is
 // bad idea, but I can't imagine it being too detrimental since it's only being
@@ -44,7 +45,7 @@ namespace logging
 arclog::StdOutput*  std_output  = nullptr;
 arclog::FileOutput* file_output = nullptr;
 
-util::meta::VariantPtr metadata;
+rip::util::meta::VariantPtr metadata;
 
 //------------------------------------------------------------------------------
 //                                   PROTOTYPES
@@ -106,7 +107,7 @@ void initialisation_routine()
     metaengine::Document::set_get_fallback_reporter(std_get_reporter);
 
     // build the path to the base logging document
-    arc::io::sys::Path meta_path(util::meta::META_SCRY_DIR);
+    arc::io::sys::Path meta_path(scry::global::meta::META_SCRY_DIR);
     meta_path << "logging" << "logging.json";
 
     // built-in memory data

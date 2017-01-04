@@ -12,9 +12,9 @@
 #include <QtGui/QFontDatabase>
 #include <QtWidgets/QApplication>
 
-#include "scry/common/SC_Global.hpp"
-#include "scry/common/SC_Logging.hpp"
-#include "scry/common/SC_MetaCompiled.hpp"
+#include "scry/base/SC_Global.hpp"
+#include "scry/base/SC_Logging.hpp"
+#include "scry/base/SC_MetaCompiled.hpp"
 #include "scry/gui/GUI_Global.hpp"
 
 namespace scry
@@ -35,16 +35,6 @@ namespace boot
 void meta_initialisation_subroutine();
 
 /*!
- * \brief Performs initialisation of Qt.
- */
-void qt_initialisation_subroutine();
-
-/*!
- * \brief Performs the shutdown of Qt.
- */
-void qt_shutdown_subroutine();
-
-/*!
  * \brief Loads the fonts required by Scry's GUI.
  */
 void load_fonts();
@@ -59,15 +49,12 @@ void initialisation_routine()
         << "Initialising integral components of the GUI" << std::endl;
 
     meta_initialisation_subroutine();
-    qt_initialisation_subroutine();
     load_fonts();
 }
 
 void shutdown_routine()
 {
     scry::logger->debug << "Shutting down the GUI" << std::endl;
-
-    qt_shutdown_subroutine();
 }
 
 void meta_initialisation_subroutine()
@@ -75,7 +62,7 @@ void meta_initialisation_subroutine()
     scry::logger->debug << "Initialising GUI MetaEngine data" << std::endl;
 
     // build the path to the gui metadata directory
-    arc::io::sys::Path gui_meta_path(util::meta::META_SCRY_DIR);
+    arc::io::sys::Path gui_meta_path(scry::global::meta::META_SCRY_DIR);
     gui_meta_path << "gui";
     // build the path to the gui resources metadata directory
     arc::io::sys::Path resources_meta_path(gui_meta_path);
@@ -106,25 +93,23 @@ void meta_initialisation_subroutine()
         fonts_meta_path,
         &fonts_compiled
     ));
-}
 
-void qt_initialisation_subroutine()
-{
-    scry::logger->debug << "Initialising Qt" << std::endl;
+    // build the path to the gui widgets metadata directory
+    arc::io::sys::Path widgets_meta_path(gui_meta_path);
+    widgets_meta_path << "widgets";
 
-    int argc = 0;
-    scry::gui::global::qt_application = new QApplication(argc, nullptr);
-}
-
-void qt_shutdown_subroutine()
-{
-    scry::logger->debug << "Shutting down Qt" << std::endl;
-
-    if(scry::gui::global::qt_application != nullptr)
-    {
-        delete scry::gui::global::qt_application;
-        scry::gui::global::qt_application = nullptr;
-    }
+    //-----------------------------STARTUP WIDGETS------------------------------
+    // build the path the startup widgets metadata
+    arc::io::sys::Path startup_meta_path(widgets_meta_path);
+    startup_meta_path << "startup.json";
+    // built-in memory data
+    static const arc::str::UTF8String startup_compiled(
+        SCRY_METACOMPILED_GUI_WIDGETS_STARTUP);
+    // construct the document
+    scry::gui::global::meta::widgets_startup.reset(new metaengine::Document(
+        startup_meta_path,
+        &startup_compiled
+    ));
 }
 
 void load_fonts()
@@ -178,9 +163,9 @@ void load_fonts()
             font_reader.read(font_data, data_size);
 
             // attempt to load the font
-            QByteArray byte_array =
-                QByteArray::fromRawData(font_data, data_size);
-            if(QFontDatabase::addApplicationFontFromData(byte_array) != 0)
+            QByteArray byte_array(font_data, data_size);
+            int font_id = QFontDatabase::addApplicationFontFromData(byte_array);
+            if(font_id != 0)
             {
                 scry::logger->warning
                     << "Font file could not be loaded it may be corrupt or an "
@@ -200,6 +185,15 @@ void load_fonts()
                 << "format \"" << path << "\". Supported formats are: ["
                 << f_supported_formats << "]" << std::endl;
         }
+    }
+
+    // TODO: REMOVE ME
+    QFontDatabase font_db;
+    QStringList families = font_db.families();
+    for(QString family : families)
+    {
+        scry::logger->warning
+            << "Family: " << family.toStdString() << std::endl;
     }
 }
 

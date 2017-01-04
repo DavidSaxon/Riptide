@@ -1,0 +1,38 @@
+{
+    "splash_screen":
+    {
+        "window_flags": ["FramelessWindowHint"],
+        "size":
+        {
+            "width": "1000px",
+            "height": "500px"
+        },
+        "position":
+        {
+            "x": "50#",
+            "y": "50#",
+            "origin_x": "50%",
+            "origin_y": "50%"
+        },
+        "style_sheet": "background: qlineargradient(x1:0 y1:0, x2:1 y2:0, stop:0 #40A4BD, stop:1 #7049A8);",
+        "logo":
+        {
+            "image": ["#{images_logo}", "logo_full.png"],
+            "size":
+            {
+                "width": "22%",
+                "height": "1:1"
+            }
+        },
+        "title":
+        {
+            "text": "RIPTIDE",
+            "style_sheet": "background: rgba(0, 0, 0, 0); color: white;",
+            "font":
+            {
+                "family": "Roboto",
+                "size": "184px"
+            }
+        }
+    }
+}

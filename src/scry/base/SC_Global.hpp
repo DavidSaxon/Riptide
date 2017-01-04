@@ -3,12 +3,12 @@
  * \author David Saxon
  * \brief Global objects for Scry.
  */
-#ifndef RIPTIDE_SCRY_COMMON_GLOBAL_HPP_
-#define RIPTIDE_SCRY_COMMON_GLOBAL_HPP_
+#ifndef RIPTIDE_SCRY_BASE_GLOBAL_HPP_
+#define RIPTIDE_SCRY_BASE_GLOBAL_HPP_
 
 #include <memory>
 
-#include "scry/util/MetaUtil.hpp"
+#include "common/util/MetaUtil.hpp"
 
 //------------------------------------------------------------------------------
 //                              FORWARD DECLARATIONS
@@ -36,10 +36,21 @@ namespace meta
 {
 
 /*!
+ * \brief The path to the Scry metadata directory.
+ */
+extern const arc::io::sys::Path META_SCRY_DIR;
+
+/*!
+ * \brief The MetaEngine Document for the directories where common Riptide
+ *        resources are found.
+ */
+extern rip::util::meta::DocumentPtr common_resource_locations;
+
+/*!
  * \brief The MetaEngine Document for the directories where scry resources are
  *        found.
  */
-extern util::meta::DocumentPtr resource_locations;
+extern rip::util::meta::DocumentPtr resource_locations;
 
 } // namespace meta
 
@@ -48,6 +59,11 @@ extern util::meta::DocumentPtr resource_locations;
  */
 namespace res
 {
+
+/*!
+ * \brief Access to the common Riptide resources through ArcaneCollate.
+ */
+extern std::unique_ptr<arccol::Accessor> common_accessor;
 
 /*!
  * \brief Access to Scry's resources through ArcaneCollate.

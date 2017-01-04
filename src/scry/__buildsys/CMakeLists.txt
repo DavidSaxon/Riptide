@@ -5,12 +5,12 @@ set(CMAKE_AUTOMOC ON)
 set(SCRY_SRC
     ../Client.cpp
     ../Main.cpp
-    ../common/SC_Boot.cpp
-    ../common/SC_Global.cpp
-    ../common/SC_Logging.cpp
+    ../base/SC_Boot.cpp
+    ../base/SC_Global.cpp
+    ../base/SC_Logging.cpp
     ../gui/GUI_Global.cpp
     ../gui/GUI_Boot.cpp
-    ../util/MetaUtil.cpp
+    ../gui/startup/SplashScreen.cpp
 )
 
 # build the riptide client executable
@@ -18,6 +18,9 @@ add_executable(riptide_client ${SCRY_SRC})
 
 # link libraries to the riptide client
 target_link_libraries(riptide_client
+    sovereign
+    riptide_common
+    meta_qt
     Qt5::Core
     Qt5::Gui
     Qt5::Widgets
@@ -27,5 +30,4 @@ target_link_libraries(riptide_client
     arcanelog
     arcanecore_io
     arcanecore_base
-    sovereign
 )
