@@ -1,5 +1,0 @@
-// directories where to find Scry's GUI resources
-{
-    "resource_path": ["res", "client", "gui"],
-    "fonts_resource_path": ["@{resource_path}", "fonts"]
-}

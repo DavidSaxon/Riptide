@@ -40,7 +40,7 @@ link_directories(
 
 # sovereign
 add_subdirectory(src/sovereign/__buildsys)
-# riptide client
-add_subdirectory(src/client/__buildsys)
+# scry
+add_subdirectory(src/scry/__buildsys)
 # tests
 add_subdirectory(tests)

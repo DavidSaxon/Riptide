@@ -1,6 +1,0 @@
-// directories where to find the Scry resources
-{
-    "use_collated": false,
-    "resource_path": ["res", "client"],
-    "resources_toc": ["@{resource_path}", "resources.toc"]
-}
