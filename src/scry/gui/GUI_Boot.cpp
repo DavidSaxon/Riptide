@@ -6,8 +6,6 @@
 #include <metaengine/Document.hpp>
 #include <metaengine/visitors/Shorthand.hpp>
 
-#include <arcanecollate/Reader.hpp>
-
 #include <QtCore/QByteArray>
 #include <QtGui/QFontDatabase>
 #include <QtWidgets/QApplication>
@@ -16,6 +14,7 @@
 #include "scry/base/SC_Logging.hpp"
 #include "scry/base/SC_MetaCompiled.hpp"
 #include "scry/gui/GUI_Global.hpp"
+#include "scry/util/Data.hpp"
 
 namespace scry
 {
@@ -152,28 +151,19 @@ void load_fonts()
             scry::logger->debug
                 << "Loading font from: " << path << std::endl;
 
-            // access the font file
-            arccol::Reader font_reader(
-                path,
-                scry::global::res::accessor.get()
-            );
-            // read the data from the file
-            const arc::int64 data_size = font_reader.get_size();
-            char* font_data = new char[data_size];
-            font_reader.read(font_data, data_size);
-
             // attempt to load the font
-            QByteArray byte_array(font_data, data_size);
-            int font_id = QFontDatabase::addApplicationFontFromData(byte_array);
+            int font_id = QFontDatabase::addApplicationFontFromData(
+                scry::util::data::access_as_qbytearray(
+                    path,
+                    scry::global::res::accessor.get()
+                )
+            );
             if(font_id != 0)
             {
                 scry::logger->warning
                     << "Font file could not be loaded it may be corrupt or an "
                     << "invalid font file \"" << path << "\"" << std::endl;
             }
-
-            // clean up
-            delete[] font_data;
         }
         else
         {
@@ -188,13 +178,13 @@ void load_fonts()
     }
 
     // TODO: REMOVE ME
-    QFontDatabase font_db;
-    QStringList families = font_db.families();
-    for(QString family : families)
-    {
-        scry::logger->warning
-            << "Family: " << family.toStdString() << std::endl;
-    }
+    // QFontDatabase font_db;
+    // QStringList families = font_db.families();
+    // for(QString family : families)
+    // {
+    //     scry::logger->warning
+    //         << "Family: " << family.toStdString() << std::endl;
+    // }
 }
 
 } // namespace boot

@@ -103,13 +103,13 @@ void resource_access_initialisation_subroutine()
         *rip::global::meta::resource_locations->get("resources_toc", ME_PATHV)
     );
 
-    // instantiate the accessor
-    rip::global::res::accessor.reset(new arccol::Accessor(toc_path));
-
     // should resource from collated sources be used
     bool use_collated =
         *rip::global::meta::resource_locations->get("use_collated", ME_BOOLV);
     arccol::Accessor::force_real_resources = !use_collated;
+
+    // instantiate the accessor
+    rip::global::res::accessor.reset(new arccol::Accessor(toc_path));
 }
 
 } // namespace boot

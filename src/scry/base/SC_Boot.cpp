@@ -197,10 +197,6 @@ void resource_access_initialisation_subroutine()
         *scry::global::meta::resource_locations->get("resources_toc", ME_PATHV)
     );
 
-    // instantiate the accessor
-    scry::global::res::accessor.reset(new arccol::Accessor(toc_path));
-
-    // TODO: use from common!
     // should resource from collated sources be used
     bool use_collated =
         *rip::global::meta::resource_locations->get("use_collated", ME_BOOLV);
@@ -210,6 +206,9 @@ void resource_access_initialisation_subroutine()
         scry::logger->notice
             << "Using resources from non-collated sources" << std::endl;
     }
+
+    // instantiate the accessor
+    scry::global::res::accessor.reset(new arccol::Accessor(toc_path));
 }
 
 } // namespace boot

@@ -18,6 +18,7 @@
 #include <common/base/RT_Global.hpp>
 
 #include "scry/gui/GUI_Global.hpp"
+#include "scry/util/Data.hpp"
 
 namespace scry
 {
@@ -60,12 +61,17 @@ SplashScreen::SplashScreen()
 
     // create a the logo
     QLabel* logo = new QLabel(this);
-    // TODO: use arcane collate
-    QPixmap logo_pix((*scry::gui::global::meta::widgets_startup->get(
-        "splash_screen.logo.image",
-        metaengine::PathV::instance(rip::global::meta::resource_locations.get())
-    )).to_native().get_raw());
-    // logo size
+    QPixmap logo_pix;
+    logo_pix.loadFromData(
+        scry::util::data::access_as_qbytearray(
+            *scry::gui::global::meta::widgets_startup->get(
+                "splash_screen.logo.image",
+                metaengine::PathV::instance(
+                    rip::global::meta::resource_locations.get())
+            ),
+            rip::global::res::accessor.get()
+        )
+    );
     logo->setPixmap(logo_pix.scaled(
         *scry::gui::global::meta::widgets_startup->get(
             "splash_screen.logo.size", MQT_WGTSZV(logo)
