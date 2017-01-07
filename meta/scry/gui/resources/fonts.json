@@ -1,3 +1,5 @@
 {
-    "supported_formats": ["ttf", "otf"]
+    "supported_formats": ["ttf", "otf"],
+    "title_font": ["Roboto", "Noto Sans CJK TC", "Ume Gothic"],
+    "console_font": ["FreeMono", "Monospace"]
 }

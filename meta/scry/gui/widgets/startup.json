@@ -30,7 +30,7 @@
             "style_sheet": "background: rgba(0, 0, 0, 0); color: white;",
             "font":
             {
-                "family": "Roboto",
+                "family": "#{title}",
                 "size": "186px"
             }
         }

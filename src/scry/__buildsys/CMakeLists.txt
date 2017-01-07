@@ -12,6 +12,7 @@ set(SCRY_SRC
     ../gui/GUI_Boot.cpp
     ../gui/startup/SplashScreen.cpp
     ../util/Data.cpp
+    ../util/Font.cpp
 )
 
 # build the riptide client executable

@@ -16,6 +16,14 @@ rip::util::meta::DocumentPtr widgets_startup;
 
 } // namespace meta
 
+namespace font
+{
+
+arc::str::UTF8String title("Sans Serif");
+arc::str::UTF8String console("Sans Serif");
+
+} // namespace font
+
 } // namespace global
 } // namespace gui
 } // namespace scry

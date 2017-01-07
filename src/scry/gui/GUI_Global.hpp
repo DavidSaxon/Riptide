@@ -44,6 +44,23 @@ extern rip::util::meta::DocumentPtr widgets_startup;
 
 } // namespace meta
 
+/*!
+ * \brief Information about fonts for Scry.
+ */
+namespace font
+{
+
+/*!
+ * \brief The name of font family for title fonts.
+ */
+extern arc::str::UTF8String title;
+/*!
+ * \brief The name of the font family for console/terminal text.
+ */
+extern arc::str::UTF8String console;
+
+} // namespace font
+
 } // namespace global
 } // namespace gui
 } // namespace scry

@@ -48,8 +48,25 @@ bool QFontV::retrieve(
         return false;
     }
 
+    // get the family member as a string
+    arc::str::UTF8String family_str(family_member.asCString());
+    // is this a reference
+    if(family_str.starts_with("#{"))
+    {
+        family_str = family_str.substring(2, family_str.get_length() - 3);
+        // attempt to resolve
+        auto ref_find = m_family_refs.find(family_str);
+        if(ref_find == m_family_refs.end())
+        {
+            error_message << "Unable to find family reference with name \""
+                          << family_str << "\"";
+            return false;
+        }
+        family_str = ref_find->second;
+    }
+
     // create the font
-    m_value = QFont(family_member.asCString());
+    m_value = QFont(family_str.get_raw());
 
     // has the size member been supplied
     if(!data->isMember("size"))
@@ -111,6 +128,13 @@ bool QFontV::retrieve(
     error_message << "Cannot resolve size member \"" << size << "\" since it "
                   << "has an unrecognised syntax.";
     return false;
+}
+
+void QFontV::add_family_reference(
+        const arc::str::UTF8String& name,
+        const arc::str::UTF8String& target)
+{
+    m_family_refs[name] = target;
 }
 
 } // namespace meta_qt

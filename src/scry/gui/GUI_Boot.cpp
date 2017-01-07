@@ -10,11 +10,14 @@
 #include <QtGui/QFontDatabase>
 #include <QtWidgets/QApplication>
 
+#include <meta_qt/gui/Font.hpp>
+
 #include "scry/base/SC_Global.hpp"
 #include "scry/base/SC_Logging.hpp"
 #include "scry/base/SC_MetaCompiled.hpp"
 #include "scry/gui/GUI_Global.hpp"
 #include "scry/util/Data.hpp"
+#include "scry/util/Font.hpp"
 
 namespace scry
 {
@@ -38,6 +41,11 @@ void meta_initialisation_subroutine();
  */
 void load_fonts();
 
+/*!
+ * \brief Assigns the built-in fonts of Scry.
+ */
+void assign_application_fonts();
+
 //------------------------------------------------------------------------------
 //                                   FUNCTIONS
 //------------------------------------------------------------------------------
@@ -49,6 +57,7 @@ void initialisation_routine()
 
     meta_initialisation_subroutine();
     load_fonts();
+    assign_application_fonts();
 }
 
 void shutdown_routine()
@@ -176,15 +185,40 @@ void load_fonts()
                 << f_supported_formats << "]" << std::endl;
         }
     }
+}
 
-    // TODO: REMOVE ME
-    // QFontDatabase font_db;
-    // QStringList families = font_db.families();
-    // for(QString family : families)
-    // {
-    //     scry::logger->warning
-    //         << "Family: " << family.toStdString() << std::endl;
-    // }
+void assign_application_fonts()
+{
+    scry::logger->debug << "Assigning application fonts" << std::endl;
+
+    // assign the title font from the fallback list
+    for(const arc::str::UTF8String& font_family :
+        *scry::gui::global::meta::fonts->get("title_font", ME_U8STRVECV))
+    {
+        if(scry::util::font::is_font_available(font_family))
+        {
+            scry::gui::global::font::title = font_family;
+            break;
+        }
+    }
+    // add the built-in fonts as meta_qt::QFontV family references
+    meta_qt::QFontV::instance().add_family_reference(
+        "title", scry::gui::global::font::title);
+
+
+    // assign the title font from the fallback list
+    for(const arc::str::UTF8String& font_family :
+        *scry::gui::global::meta::fonts->get("console_font", ME_U8STRVECV))
+    {
+        if(scry::util::font::is_font_available(font_family))
+        {
+            scry::gui::global::font::console = font_family;
+            break;
+        }
+    }
+    // add the built-in fonts as meta_qt::QFontV family references
+    meta_qt::QFontV::instance().add_family_reference(
+        "console", scry::gui::global::font::console);
 }
 
 } // namespace boot
