@@ -1,0 +1,189 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="core|Win32">
+      <Configuration>core</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="meta_qt|Win32">
+      <Configuration>meta_qt</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Scry|Win32">
+      <Configuration>Scry</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="sovereign|Win32">
+      <Configuration>sovereign</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup Condition="'$(Configuration)'=='sovereign'">
+    <ClCompile Include="src\sovereign\prototyping\patterns\HistoricalPatternMatching.cpp" />
+  </ItemGroup>
+  <ItemGroup Condition="'$(Configuration)'=='core'">
+    <ClCompile Include="src\core\base\RT_Boot.cpp" />
+    <ClCompile Include="src\core\base\RT_Global.cpp" />
+  </ItemGroup>
+  <ItemGroup Condition="'$(Configuration)'=='meta_qt'">
+    <ClCompile Include="src\meta_qt\core\Geometry.cpp" />
+    <ClCompile Include="src\meta_qt\core\Qt.cpp" />
+    <ClCompile Include="src\meta_qt\gui\Font.cpp" />
+  </ItemGroup>
+  <ItemGroup Condition="'$(Configuration)'=='Scry'">
+    <ClCompile Include="src\scry\Client.cpp" />
+    <ClCompile Include="src\scry\Main.cpp" />
+    <ClCompile Include="src\scry\base\SC_Boot.cpp" />
+    <ClCompile Include="src\scry\base\SC_Global.cpp" />
+    <ClCompile Include="src\scry\base\SC_Logging.cpp" />
+    <ClCompile Include="src\scry\gui\GUI_Global.cpp" />
+    <ClCompile Include="src\scry\gui\GUI_Boot.cpp" />
+    <ClCompile Include="src\scry\gui\startup\SplashScreen.cpp" />
+    <ClCompile Include="src\scry\util\Data.cpp" />
+    <ClCompile Include="src\scry\util\Font.cpp" />
+    <ClCompile Include="gen\scry\*" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{273C6D3E-D666-49A9-AD95-DF76220500B3}</ProjectGuid>
+    <RootNamespace>Riptide</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='sovereign|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='core|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='meta_qt|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Scry|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='sovereign|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='core|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='meta_qt|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Scry|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)'=='Scry'">
+    <Import Project="$(SolutionDir)\Riptide\scry_moc.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='sovereign|Win32'">
+    <OutDir>$(SolutionDir)\$(ProjectName)\build\win_x86\</OutDir>
+    <IntDir>intermediate\$(Configuration)\</IntDir>
+    <TargetName>sovereign</TargetName>
+    <TargetExt>.lib</TargetExt>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='core|Win32'">
+    <OutDir>$(SolutionDir)\$(ProjectName)\build\win_x86\</OutDir>
+    <IntDir>intermediate\$(Configuration)\</IntDir>
+    <TargetName>core</TargetName>
+    <TargetExt>.lib</TargetExt>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='meta_qt|Win32'">
+    <OutDir>$(SolutionDir)\$(ProjectName)\build\win_x86\</OutDir>
+    <IntDir>intermediate\$(Configuration)\</IntDir>
+    <TargetName>meta_qt</TargetName>
+    <TargetExt>.lib</TargetExt>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Scry|Win32'">
+    <OutDir>$(SolutionDir)\$(ProjectName)\build\win_x86\</OutDir>
+    <IntDir>intermediate\$(Configuration)\</IntDir>
+    <TargetName>riptide_client</TargetName>
+    <TargetExt>.exe</TargetExt>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='sovereign|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>D:\Dropbox\Development\ArcaneCore\ArcaneCore\src\cpp;D:\Dropbox\Development\ArcaneLog\ArcaneLog\src\cpp;D:\Dropbox\Development\MetaEngine\MetaEngine\src\cpp;D:\Dropbox\Development\ArcaneCollate\ArcaneCollate\src\cpp;D:\Dropbox\Development\Riptide\Riptide\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='core|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>D:\Dropbox\Development\ArcaneCore\ArcaneCore\src\cpp;D:\Dropbox\Development\ArcaneLog\ArcaneLog\src\cpp;D:\Dropbox\Development\MetaEngine\MetaEngine\src\cpp;D:\Dropbox\Development\ArcaneCollate\ArcaneCollate\src\cpp;D:\Dropbox\Development\Riptide\Riptide\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='meta_qt|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>D:\Dropbox\Development\ArcaneCore\ArcaneCore\src\cpp;D:\Dropbox\Development\ArcaneLog\ArcaneLog\src\cpp;D:\Dropbox\Development\MetaEngine\MetaEngine\src\cpp;D:\Dropbox\Development\ArcaneCollate\ArcaneCollate\src\cpp;D:\Libraries\qt5-5.5.0-vs2013\qt5-x86-shared-release\include;D:\Dropbox\Development\Riptide\Riptide\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Scry|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>D:\Dropbox\Development\ArcaneCore\ArcaneCore\src\cpp;D:\Dropbox\Development\ArcaneLog\ArcaneLog\src\cpp;D:\Dropbox\Development\MetaEngine\MetaEngine\src\cpp;D:\Dropbox\Development\ArcaneCollate\ArcaneCollate\src\cpp;D:\Libraries\qt5-5.5.0-vs2013\qt5-x86-shared-release\include;D:\Dropbox\Development\Riptide\Riptide\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>D:\Dropbox\Development\ArcaneCore\ArcaneCore\build\win_x86;D:\Dropbox\Development\ArcaneLog\ArcaneLog\build\win_x86;D:\Dropbox\Development\MetaEngine\MetaEngine\build\win_x86;D:\Dropbox\Development\ArcaneCollate\ArcaneCollate\build\win_x86;D:\Libraries\qt5-5.5.0-vs2013\qt5-x86-shared-release\lib;D:\Dropbox\Development\Riptide\Riptide\build\win_x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>arcanecore_io.lib;arcanecore_gfx.lib;arcanecore_base.lib;arcanelog.lib;arcanelog_shared.lib;metaengine.lib;arcanecollate.lib;Qt5Core.lib;Qt5Gui.lib;Qt5Widgets.lib;meta_qt.lib;core.lib;sovereign.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

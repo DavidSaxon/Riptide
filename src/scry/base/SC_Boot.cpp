@@ -10,8 +10,9 @@
     #include <windows.h>
 #endif
 
-#include "common/base/RT_Boot.hpp"
-#include "common/base/RT_Global.hpp"
+#include <core/base/RT_Boot.hpp>
+#include <core/base/RT_Global.hpp>
+
 #include "scry/base/SC_Global.hpp"
 #include "scry/base/SC_Logging.hpp"
 #include "scry/base/SC_MetaCompiled.hpp"

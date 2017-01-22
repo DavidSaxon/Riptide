@@ -8,7 +8,7 @@
 
 #include <memory>
 
-#include "common/util/MetaUtil.hpp"
+#include <core/util/MetaUtil.hpp>
 
 //------------------------------------------------------------------------------
 //                              FORWARD DECLARATIONS

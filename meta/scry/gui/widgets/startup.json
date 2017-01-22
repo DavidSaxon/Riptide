@@ -15,6 +15,10 @@
             "origin_y": "50%"
         },
         "style_sheet": "background: qlineargradient(x1:0 y1:0, x2:1 y2:0, stop:0 #40A4BD, stop:1 #7049A8);",
+        "title_layout":
+        {
+            "spacing": 34
+        },
         "logo":
         {
             "image": ["#{images_logo}", "logo_full.png"],

@@ -15,7 +15,7 @@
 #include <meta_qt/core/Qt.hpp>
 #include <meta_qt/gui/Font.hpp>
 
-#include <common/base/RT_Global.hpp>
+#include <core/base/RT_Global.hpp>
 
 #include "scry/gui/GUI_Global.hpp"
 #include "scry/util/Data.hpp"
@@ -51,11 +51,12 @@ SplashScreen::SplashScreen()
         "splash_screen.style_sheet", ME_U8STRV
     )).get_raw());
 
-    // TODO: meta engine???
     // set up layouts
     QVBoxLayout* main_layout = new QVBoxLayout();
+    setLayout(main_layout);
     QHBoxLayout* title_layout = new QHBoxLayout();
-    title_layout->setSpacing(34);
+    title_layout->setSpacing(*scry::gui::global::meta::widgets_startup->get(
+        "splash_screen.title_layout.spacing", ME_INTV(arc::int32)));
     title_layout->setContentsMargins(0, 0, 0, 0);
     main_layout->addLayout(title_layout);
 
@@ -96,6 +97,8 @@ SplashScreen::SplashScreen()
     // add to layout
     title_layout->addWidget(title);
 
+    // create a layout that
+
     // TODO: don't offset title..
     // TODO: transform into logger
     QLabel* state_info = new QLabel("Bootstrapping...");
@@ -106,7 +109,7 @@ SplashScreen::SplashScreen()
     state_info->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Maximum);
     main_layout->addWidget(state_info);
 
-    setLayout(main_layout);
+
 }
 
 } // namespace startup

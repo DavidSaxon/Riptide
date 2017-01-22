@@ -1,0 +1,1 @@
+﻿res/core/images/logo/logo_full.png,res/core/images.arccol,0,0,169796

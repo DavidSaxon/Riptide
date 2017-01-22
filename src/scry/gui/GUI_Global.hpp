@@ -6,7 +6,7 @@
 #ifndef RIPTIDE_SCRY_GUI_GLOBAL_HPP_
 #define RIPTIDE_SCRY_GUI_GLOBAL_HPP_
 
-#include "common/util/MetaUtil.hpp"
+#include <core/util/MetaUtil.hpp>
 
 namespace scry
 {

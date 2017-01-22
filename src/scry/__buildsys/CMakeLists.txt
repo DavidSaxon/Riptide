@@ -21,7 +21,7 @@ add_executable(riptide_client ${SCRY_SRC})
 # link libraries to the riptide client
 target_link_libraries(riptide_client
     sovereign
-    riptide_common
+    riptide_core
     meta_qt
     Qt5::Core
     Qt5::Gui

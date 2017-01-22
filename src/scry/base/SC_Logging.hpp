@@ -9,7 +9,7 @@
 #include <arcanelog/Input.hpp>
 #include <arcanelog/Verbosity.hpp>
 
-#include "common/util/MetaUtil.hpp"
+#include "core/util/MetaUtil.hpp"
 
 //------------------------------------------------------------------------------
 //                              FORWARD DECLARATIONS

@@ -40,8 +40,8 @@ link_directories(
 
 # meta_qt
 add_subdirectory(src/meta_qt/__buildsys)
-# common
-add_subdirectory(src/common/__buildsys)
+# core
+add_subdirectory(src/core/__buildsys)
 # sovereign
 add_subdirectory(src/sovereign/__buildsys)
 # scry

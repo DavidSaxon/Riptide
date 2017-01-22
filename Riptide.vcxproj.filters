@@ -1,0 +1,273 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\scry\Client.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\scry\Main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\scry\base\SC_Boot.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\scry\base\SC_Global.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\scry\base\SC_Logging.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\scry\gui\GUI_Global.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\scry\gui\GUI_Boot.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\scry\gui\startup\SplashScreen.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\scry\util\Data.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\scry\util\Font.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="gen\scry\moc_Client.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="gen\scry\moc_Data.cpp" />
+    <ClCompile Include="gen\scry\moc_Font.cpp" />
+    <ClCompile Include="gen\scry\moc_GUI_Boot.cpp" />
+    <ClCompile Include="gen\scry\moc_GUI_Global.cpp" />
+    <ClCompile Include="gen\scry\moc_SC_Boot.cpp" />
+    <ClCompile Include="gen\scry\moc_SC_Global.cpp" />
+    <ClCompile Include="gen\scry\moc_SC_Logging.cpp" />
+    <ClCompile Include="gen\scry\moc_SC_MetaCompiled.cpp" />
+    <ClCompile Include="gen\scry\moc_SplashScreen.cpp" />
+    <ClCompile Include="gen\scry\moc___gui.cpp" />
+    <ClCompile Include="gen\scry\moc___scry.cpp" />
+    <ClCompile Include="gen\scry\moc___startup.cpp" />
+    <ClCompile Include="gen\scry\moc___util.cpp" />
+    <ClCompile Include="gen\scry\moc_Client.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="gen\scry\moc_Data.cpp" />
+    <ClCompile Include="gen\scry\moc_Font.cpp" />
+    <ClCompile Include="gen\scry\moc_GUI_Boot.cpp" />
+    <ClCompile Include="gen\scry\moc_GUI_Global.cpp" />
+    <ClCompile Include="gen\scry\moc_SC_Boot.cpp" />
+    <ClCompile Include="gen\scry\moc_SC_Global.cpp" />
+    <ClCompile Include="gen\scry\moc_SC_Logging.cpp" />
+    <ClCompile Include="gen\scry\moc_SC_MetaCompiled.cpp" />
+    <ClCompile Include="gen\scry\moc_SplashScreen.cpp" />
+    <ClCompile Include="gen\scry\moc___gui.cpp" />
+    <ClCompile Include="gen\scry\moc___scry.cpp" />
+    <ClCompile Include="gen\scry\moc___startup.cpp" />
+    <ClCompile Include="gen\scry\moc___util.cpp" />
+    <ClCompile Include="gen\scry\moc_Client.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="gen\scry\moc_Data.cpp" />
+    <ClCompile Include="gen\scry\moc_Font.cpp" />
+    <ClCompile Include="gen\scry\moc_GUI_Boot.cpp" />
+    <ClCompile Include="gen\scry\moc_GUI_Global.cpp" />
+    <ClCompile Include="gen\scry\moc_SC_Boot.cpp" />
+    <ClCompile Include="gen\scry\moc_SC_Global.cpp" />
+    <ClCompile Include="gen\scry\moc_SC_Logging.cpp" />
+    <ClCompile Include="gen\scry\moc_SC_MetaCompiled.cpp" />
+    <ClCompile Include="gen\scry\moc_SplashScreen.cpp" />
+    <ClCompile Include="gen\scry\moc___gui.cpp" />
+    <ClCompile Include="gen\scry\moc___scry.cpp" />
+    <ClCompile Include="gen\scry\moc___startup.cpp" />
+    <ClCompile Include="gen\scry\moc___util.cpp" />
+    <ClCompile Include="gen\scry\moc_Client.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="gen\scry\moc_Data.cpp" />
+    <ClCompile Include="gen\scry\moc_Font.cpp" />
+    <ClCompile Include="gen\scry\moc_GUI_Boot.cpp" />
+    <ClCompile Include="gen\scry\moc_GUI_Global.cpp" />
+    <ClCompile Include="gen\scry\moc_SC_Boot.cpp" />
+    <ClCompile Include="gen\scry\moc_SC_Global.cpp" />
+    <ClCompile Include="gen\scry\moc_SC_Logging.cpp" />
+    <ClCompile Include="gen\scry\moc_SC_MetaCompiled.cpp" />
+    <ClCompile Include="gen\scry\moc_SplashScreen.cpp" />
+    <ClCompile Include="gen\scry\moc___gui.cpp" />
+    <ClCompile Include="gen\scry\moc___scry.cpp" />
+    <ClCompile Include="gen\scry\moc___startup.cpp" />
+    <ClCompile Include="gen\scry\moc___util.cpp" />
+    <ClCompile Include="gen\scry\moc_Client.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="gen\scry\moc_Data.cpp" />
+    <ClCompile Include="gen\scry\moc_Font.cpp" />
+    <ClCompile Include="gen\scry\moc_GUI_Boot.cpp" />
+    <ClCompile Include="gen\scry\moc_GUI_Global.cpp" />
+    <ClCompile Include="gen\scry\moc_SC_Boot.cpp" />
+    <ClCompile Include="gen\scry\moc_SC_Global.cpp" />
+    <ClCompile Include="gen\scry\moc_SC_Logging.cpp" />
+    <ClCompile Include="gen\scry\moc_SC_MetaCompiled.cpp" />
+    <ClCompile Include="gen\scry\moc_SplashScreen.cpp" />
+    <ClCompile Include="gen\scry\moc___gui.cpp" />
+    <ClCompile Include="gen\scry\moc___scry.cpp" />
+    <ClCompile Include="gen\scry\moc___startup.cpp" />
+    <ClCompile Include="gen\scry\moc___util.cpp" />
+    <ClCompile Include="gen\scry\moc_Client.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="gen\scry\moc_Data.cpp" />
+    <ClCompile Include="gen\scry\moc_Font.cpp" />
+    <ClCompile Include="gen\scry\moc_GUI_Boot.cpp" />
+    <ClCompile Include="gen\scry\moc_GUI_Global.cpp" />
+    <ClCompile Include="gen\scry\moc_SC_Boot.cpp" />
+    <ClCompile Include="gen\scry\moc_SC_Global.cpp" />
+    <ClCompile Include="gen\scry\moc_SC_Logging.cpp" />
+    <ClCompile Include="gen\scry\moc_SC_MetaCompiled.cpp" />
+    <ClCompile Include="gen\scry\moc_SplashScreen.cpp" />
+    <ClCompile Include="gen\scry\moc___gui.cpp" />
+    <ClCompile Include="gen\scry\moc___scry.cpp" />
+    <ClCompile Include="gen\scry\moc___startup.cpp" />
+    <ClCompile Include="gen\scry\moc___util.cpp" />
+    <ClCompile Include="gen\scry\moc_Client.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="gen\scry\moc_Data.cpp" />
+    <ClCompile Include="gen\scry\moc_Font.cpp" />
+    <ClCompile Include="gen\scry\moc_GUI_Boot.cpp" />
+    <ClCompile Include="gen\scry\moc_GUI_Global.cpp" />
+    <ClCompile Include="gen\scry\moc_SC_Boot.cpp" />
+    <ClCompile Include="gen\scry\moc_SC_Global.cpp" />
+    <ClCompile Include="gen\scry\moc_SC_Logging.cpp" />
+    <ClCompile Include="gen\scry\moc_SC_MetaCompiled.cpp" />
+    <ClCompile Include="gen\scry\moc_SplashScreen.cpp" />
+    <ClCompile Include="gen\scry\moc___gui.cpp" />
+    <ClCompile Include="gen\scry\moc___scry.cpp" />
+    <ClCompile Include="gen\scry\moc___startup.cpp" />
+    <ClCompile Include="gen\scry\moc___util.cpp" />
+    <ClCompile Include="gen\scry\moc_Client.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="gen\scry\moc_Data.cpp" />
+    <ClCompile Include="gen\scry\moc_Font.cpp" />
+    <ClCompile Include="gen\scry\moc_GUI_Boot.cpp" />
+    <ClCompile Include="gen\scry\moc_GUI_Global.cpp" />
+    <ClCompile Include="gen\scry\moc_SC_Boot.cpp" />
+    <ClCompile Include="gen\scry\moc_SC_Global.cpp" />
+    <ClCompile Include="gen\scry\moc_SC_Logging.cpp" />
+    <ClCompile Include="gen\scry\moc_SC_MetaCompiled.cpp" />
+    <ClCompile Include="gen\scry\moc_SplashScreen.cpp" />
+    <ClCompile Include="gen\scry\moc___gui.cpp" />
+    <ClCompile Include="gen\scry\moc___scry.cpp" />
+    <ClCompile Include="gen\scry\moc___startup.cpp" />
+    <ClCompile Include="gen\scry\moc___util.cpp" />
+    <ClCompile Include="gen\scry\moc_Client.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="gen\scry\moc_Data.cpp" />
+    <ClCompile Include="gen\scry\moc_Font.cpp" />
+    <ClCompile Include="gen\scry\moc_GUI_Boot.cpp" />
+    <ClCompile Include="gen\scry\moc_GUI_Global.cpp" />
+    <ClCompile Include="gen\scry\moc_SC_Boot.cpp" />
+    <ClCompile Include="gen\scry\moc_SC_Global.cpp" />
+    <ClCompile Include="gen\scry\moc_SC_Logging.cpp" />
+    <ClCompile Include="gen\scry\moc_SC_MetaCompiled.cpp" />
+    <ClCompile Include="gen\scry\moc_SplashScreen.cpp" />
+    <ClCompile Include="gen\scry\moc___gui.cpp" />
+    <ClCompile Include="gen\scry\moc___scry.cpp" />
+    <ClCompile Include="gen\scry\moc___startup.cpp" />
+    <ClCompile Include="gen\scry\moc___util.cpp" />
+    <ClCompile Include="gen\scry\moc_Client.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="gen\scry\moc_Data.cpp" />
+    <ClCompile Include="gen\scry\moc_Font.cpp" />
+    <ClCompile Include="gen\scry\moc_GUI_Boot.cpp" />
+    <ClCompile Include="gen\scry\moc_GUI_Global.cpp" />
+    <ClCompile Include="gen\scry\moc_SC_Boot.cpp" />
+    <ClCompile Include="gen\scry\moc_SC_Global.cpp" />
+    <ClCompile Include="gen\scry\moc_SC_Logging.cpp" />
+    <ClCompile Include="gen\scry\moc_SC_MetaCompiled.cpp" />
+    <ClCompile Include="gen\scry\moc_SplashScreen.cpp" />
+    <ClCompile Include="gen\scry\moc___gui.cpp" />
+    <ClCompile Include="gen\scry\moc___scry.cpp" />
+    <ClCompile Include="gen\scry\moc___startup.cpp" />
+    <ClCompile Include="gen\scry\moc___util.cpp" />
+    <ClCompile Include="gen\scry\moc_Client.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="gen\scry\moc_Data.cpp" />
+    <ClCompile Include="gen\scry\moc_Font.cpp" />
+    <ClCompile Include="gen\scry\moc_GUI_Boot.cpp" />
+    <ClCompile Include="gen\scry\moc_GUI_Global.cpp" />
+    <ClCompile Include="gen\scry\moc_SC_Boot.cpp" />
+    <ClCompile Include="gen\scry\moc_SC_Global.cpp" />
+    <ClCompile Include="gen\scry\moc_SC_Logging.cpp" />
+    <ClCompile Include="gen\scry\moc_SC_MetaCompiled.cpp" />
+    <ClCompile Include="gen\scry\moc_SplashScreen.cpp" />
+    <ClCompile Include="gen\scry\moc___gui.cpp" />
+    <ClCompile Include="gen\scry\moc___scry.cpp" />
+    <ClCompile Include="gen\scry\moc___startup.cpp" />
+    <ClCompile Include="gen\scry\moc___util.cpp" />
+    <ClCompile Include="gen\scry\moc_Client.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="gen\scry\moc_Data.cpp" />
+    <ClCompile Include="gen\scry\moc_Font.cpp" />
+    <ClCompile Include="gen\scry\moc_GUI_Boot.cpp" />
+    <ClCompile Include="gen\scry\moc_GUI_Global.cpp" />
+    <ClCompile Include="gen\scry\moc_SC_Boot.cpp" />
+    <ClCompile Include="gen\scry\moc_SC_Global.cpp" />
+    <ClCompile Include="gen\scry\moc_SC_Logging.cpp" />
+    <ClCompile Include="gen\scry\moc_SC_MetaCompiled.cpp" />
+    <ClCompile Include="gen\scry\moc_SplashScreen.cpp" />
+    <ClCompile Include="gen\scry\moc___gui.cpp" />
+    <ClCompile Include="gen\scry\moc___scry.cpp" />
+    <ClCompile Include="gen\scry\moc___startup.cpp" />
+    <ClCompile Include="gen\scry\moc___util.cpp" />
+    <ClCompile Include="gen\scry\moc_Client.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="gen\scry\moc_Data.cpp" />
+    <ClCompile Include="gen\scry\moc_Font.cpp" />
+    <ClCompile Include="gen\scry\moc_GUI_Boot.cpp" />
+    <ClCompile Include="gen\scry\moc_GUI_Global.cpp" />
+    <ClCompile Include="gen\scry\moc_SC_Boot.cpp" />
+    <ClCompile Include="gen\scry\moc_SC_Global.cpp" />
+    <ClCompile Include="gen\scry\moc_SC_Logging.cpp" />
+    <ClCompile Include="gen\scry\moc_SC_MetaCompiled.cpp" />
+    <ClCompile Include="gen\scry\moc_SplashScreen.cpp" />
+    <ClCompile Include="gen\scry\moc___gui.cpp" />
+    <ClCompile Include="gen\scry\moc___scry.cpp" />
+    <ClCompile Include="gen\scry\moc___startup.cpp" />
+    <ClCompile Include="gen\scry\moc___util.cpp" />
+    <ClCompile Include="gen\scry\moc_Client.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="gen\scry\moc_Data.cpp" />
+    <ClCompile Include="gen\scry\moc_Font.cpp" />
+    <ClCompile Include="gen\scry\moc_GUI_Boot.cpp" />
+    <ClCompile Include="gen\scry\moc_GUI_Global.cpp" />
+    <ClCompile Include="gen\scry\moc_SC_Boot.cpp" />
+    <ClCompile Include="gen\scry\moc_SC_Global.cpp" />
+    <ClCompile Include="gen\scry\moc_SC_Logging.cpp" />
+    <ClCompile Include="gen\scry\moc_SC_MetaCompiled.cpp" />
+    <ClCompile Include="gen\scry\moc_SplashScreen.cpp" />
+    <ClCompile Include="gen\scry\moc___gui.cpp" />
+    <ClCompile Include="gen\scry\moc___scry.cpp" />
+    <ClCompile Include="gen\scry\moc___startup.cpp" />
+    <ClCompile Include="gen\scry\moc___util.cpp" />
+  </ItemGroup>
+</Project>
