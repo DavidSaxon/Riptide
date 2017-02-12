@@ -10,9 +10,11 @@ set(SCRY_SRC
     ../base/SC_Logging.cpp
     ../gui/GUI_Global.cpp
     ../gui/GUI_Boot.cpp
+    ../gui/logging/LabelLogger.cpp
     ../gui/startup/SplashScreen.cpp
     ../util/Data.cpp
     ../util/Font.cpp
+    ../util/Icon.cpp
 )
 
 # build the riptide client executable

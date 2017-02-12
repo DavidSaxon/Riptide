@@ -38,9 +38,11 @@
     <ClCompile Include="src\scry\base\SC_Logging.cpp" />
     <ClCompile Include="src\scry\gui\GUI_Global.cpp" />
     <ClCompile Include="src\scry\gui\GUI_Boot.cpp" />
+    <ClCompile Include="src\scry\gui\logging\LabelLogger.cpp" />
     <ClCompile Include="src\scry\gui\startup\SplashScreen.cpp" />
     <ClCompile Include="src\scry\util\Data.cpp" />
     <ClCompile Include="src\scry\util\Font.cpp" />
+    <ClCompile Include="src\scry\util\Icon.cpp" />
     <ClCompile Include="gen\scry\*" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

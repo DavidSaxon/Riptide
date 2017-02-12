@@ -193,9 +193,29 @@ bool WidgetSize::retrieve(
     }
     if(!height_resolved && height_s.ends_with("%"))
     {
-        error_message << "Cannot resolve height member relative to parent\'s "
-                      << "size as this has not yet been implemented.";
-        return false;
+        // ensure we can get an integral
+        arc::str::UTF8String integral(
+            height_s.substring(0, height_s.get_length() - 1));
+        if(!integral.is_int())
+        {
+            error_message << "Cannot convert height member percentage \""
+                          << integral << "\" to an integral type.";
+            return false;
+        }
+
+        // get the percentage
+        float percent = static_cast<float>(integral.to_int32()) / 100.0F;
+
+        // get the parent widget, or fallback to the current widget
+        const QWidget* parent = m_widget->parentWidget();
+        if(parent == nullptr)
+        {
+            parent = m_widget;
+        }
+
+        // apply size from the parent widget
+        temp.setHeight(parent->geometry().height() * percent);
+        height_resolved = true;
     }
 
     // resolve based on the desktop size
@@ -542,6 +562,60 @@ bool WidgetPosition::retrieve(
         error_message << "Cannot resolve y member relative to parent\'s "
                       << "position as this has not yet been implemented.";
         return false;
+    }
+
+    // resolve relative to parent's size
+    if(!x_resolved && x_s.ends_with("&"))
+    {
+        // ensure we can get an integral
+        arc::str::UTF8String integral(
+            x_s.substring(0, x_s.get_length() - 1));
+        if(!integral.is_int())
+        {
+            error_message << "Cannot convert x member parent percentage of "
+                          << "size \"" << integral << "\" to an integral type.";
+            return false;
+        }
+
+        // get the percentage
+        float percent = static_cast<float>(integral.to_int32()) / 100.0F;
+
+        // get the parent widget, or fallback to the current widget
+        const QWidget* parent = m_widget->parentWidget();
+        if(parent == nullptr)
+        {
+            parent = m_widget;
+        }
+
+        // apply size from the parent widget
+        temp.setX(parent->geometry().width() * percent);
+        x_resolved = true;
+    }
+    if(!y_resolved && y_s.ends_with("&"))
+    {
+        // ensure we can get an integral
+        arc::str::UTF8String integral(
+            y_s.substring(0, y_s.get_length() - 1));
+        if(!integral.is_int())
+        {
+            error_message << "Cannot convert x member parent percentage of "
+                          << "size \"" << integral << "\" to an integral type.";
+            return false;
+        }
+
+        // get the percentage
+        float percent = static_cast<float>(integral.to_int32()) / 100.0F;
+
+        // get the parent widget, or fallback to the current widget
+        const QWidget* parent = m_widget->parentWidget();
+        if(parent == nullptr)
+        {
+            parent = m_widget;
+        }
+
+        // apply size from the parent widget
+        temp.setY(parent->geometry().height() * percent);
+        y_resolved = true;
     }
 
     // resolve based on the desktop size

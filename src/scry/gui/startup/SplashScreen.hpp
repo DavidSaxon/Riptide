@@ -7,10 +7,26 @@
 
 #include <QtWidgets/QWidget>
 
+//------------------------------------------------------------------------------
+//                              FORWARD DECLARATIONS
+//------------------------------------------------------------------------------
+
+class QHBoxLayout;
+
 namespace scry
 {
 namespace gui
 {
+
+//------------------------------------------------------------------------------
+//                              FORWARD DECLARATIONS
+//------------------------------------------------------------------------------
+
+namespace logging
+{
+    class LabelLogger;
+} // namespace logging
+
 namespace startup
 {
 
@@ -29,6 +45,52 @@ public:
     //--------------------------------------------------------------------------
 
     SplashScreen();
+
+    //--------------------------------------------------------------------------
+    //                                 DESTRUCTOR
+    //--------------------------------------------------------------------------
+
+    ~SplashScreen();
+
+private:
+
+    //--------------------------------------------------------------------------
+    //                             PRIVATE ATTRIBUTES
+    //--------------------------------------------------------------------------
+
+    /*!
+     * \brief The logger writing to this splash screen.
+     */
+    scry::gui::logging::LabelLogger* m_logger;
+
+    /*!
+     * \brief The layout of the title components of the splash screen.
+     */
+    QHBoxLayout* m_title_layout;
+
+    //--------------------------------------------------------------------------
+    //                          PRIVATE MEMBER FUNCTIONS
+    //--------------------------------------------------------------------------
+
+    /*!
+     * \brief Performs initialisation of the splash screen.
+     */
+    void init();
+
+    /*!
+     * \brief Initialises the title section of the splash screen.
+     */
+    void init_title();
+
+    /*!
+     * \brief Initialises the arcane arts logo on the splash screen.
+     */
+    void init_arcane_arts();
+
+    /*!
+     * \brief Initialises the logger components of the title.
+     */
+    void init_logging();
 };
 
 } // namespace startup

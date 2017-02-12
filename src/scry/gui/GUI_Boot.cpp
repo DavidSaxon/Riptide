@@ -102,6 +102,19 @@ void meta_initialisation_subroutine()
         &fonts_compiled
     ));
 
+    //----------------------------------ICONS-----------------------------------
+    // build the path the fonts metadata
+    arc::io::sys::Path icons_meta_path(resources_meta_path);
+    icons_meta_path << "icons.json";
+    // built-in memory data
+    static const arc::str::UTF8String icons_compiled(
+        SCRY_METACOMPILED_GUI_RESOURCES_ICONS);
+    // construct the document
+    scry::gui::global::meta::icons.reset(new metaengine::Document(
+        icons_meta_path,
+        &icons_compiled
+    ));
+
     // build the path to the gui widgets metadata directory
     arc::io::sys::Path widgets_meta_path(gui_meta_path);
     widgets_meta_path << "widgets";
@@ -167,7 +180,7 @@ void load_fonts()
                     scry::global::res::accessor.get()
                 )
             );
-            if(font_id != 0)
+            if(font_id < 0)
             {
                 scry::logger->warning
                     << "Font file could not be loaded it may be corrupt or an "
@@ -191,9 +204,13 @@ void assign_application_fonts()
 {
     scry::logger->debug << "Assigning application fonts" << std::endl;
 
+    // TODO: should have a meta engine iterator for children
+
     // assign the title font from the fallback list
     for(const arc::str::UTF8String& font_family :
-        *scry::gui::global::meta::fonts->get("title_font", ME_U8STRVECV))
+        *scry::gui::global::meta::fonts->get(
+            "application_fonts.title", ME_U8STRVECV
+        ))
     {
         if(scry::util::font::is_font_available(font_family))
         {
@@ -208,7 +225,9 @@ void assign_application_fonts()
 
     // assign the title font from the fallback list
     for(const arc::str::UTF8String& font_family :
-        *scry::gui::global::meta::fonts->get("console_font", ME_U8STRVECV))
+        *scry::gui::global::meta::fonts->get(
+            "application_fonts.console", ME_U8STRVECV
+        ))
     {
         if(scry::util::font::is_font_available(font_family))
         {
@@ -219,6 +238,22 @@ void assign_application_fonts()
     // add the built-in fonts as meta_qt::QFontV family references
     meta_qt::QFontV::instance().add_family_reference(
         "console", scry::gui::global::font::console);
+
+    // assign the arcane arts font from the fallback list
+    for(const arc::str::UTF8String& font_family :
+        *scry::gui::global::meta::fonts->get(
+            "application_fonts.arcane_arts", ME_U8STRVECV
+        ))
+    {
+        if(scry::util::font::is_font_available(font_family))
+        {
+            scry::gui::global::font::arcane_arts = font_family;
+            break;
+        }
+    }
+    // add the built-in fonts as meta_qt::QFontV family references
+    meta_qt::QFontV::instance().add_family_reference(
+        "arcane_arts", scry::gui::global::font::arcane_arts);
 }
 
 } // namespace boot

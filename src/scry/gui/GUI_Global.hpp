@@ -36,6 +36,10 @@ extern rip::util::meta::DocumentPtr resource_locations;
  * \brief The MetaEngine Document containing data about fonts.
  */
 extern rip::util::meta::DocumentPtr fonts;
+/*!
+ * \brief The MetaEngine Document containing data about icons.
+ */
+extern rip::util::meta::DocumentPtr icons;
 
 /*!
  * \brief The MetaEngine Document containing data about startup widgets.
@@ -58,6 +62,10 @@ extern arc::str::UTF8String title;
  * \brief The name of the font family for console/terminal text.
  */
 extern arc::str::UTF8String console;
+/*!
+ * \brief The name of the font family for the Arcane Arts logo.
+ */
+extern arc::str::UTF8String arcane_arts;
 
 } // namespace font
 

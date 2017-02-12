@@ -148,6 +148,10 @@ private:
  *   the widget's parent's position. Example: ```"50%"``` - the x/y position
  *   will be half of the parent's x/y position.
  *
+ * - <b>string with ```&``` suffix:</b> The position is a relative percent of
+ *   the widget's parent's size. Example: ```"50&"``` - the x/y position
+ *   will be half of the parent's x/y size.
+ *
  * - <b>string with ```#``` suffix:</b> The position a relative percent of the
  *   desktop's default screen's size. Example: ```"40#"``` - the x/y position
  *   will be 40% of the desktop's width/height.

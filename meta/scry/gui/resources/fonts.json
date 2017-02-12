@@ -1,5 +1,10 @@
 {
     "supported_formats": ["ttf", "otf"],
-    "title_font": ["Roboto", "Noto Sans CJK TC", "Ume Gothic"],
-    "console_font": ["FreeMono", "Monospace"]
+    "application_fonts":
+    {
+        "title": ["Roboto Th", "Roboto", "Noto Sans CJK TC", "Ume Gothic"],
+        "console": ["Pseudo APL", "FreeMono", "Monospace", "Courier New"],
+        "arcane_arts": ["CODE Bold", "Sans Serif"]
+
+    }
 }

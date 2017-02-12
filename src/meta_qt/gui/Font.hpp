@@ -1,7 +1,7 @@
 #ifndef META_QT_GUI_FONT_HPP_
 #define META_QT_GUI_FONT_HPP_
 
-#include <map>
+#include <unordered_map>
 
 #include <metaengine/Document.hpp>
 
@@ -74,12 +74,12 @@ private:
     //                             PRIVATE ATTRIBUTES
     //--------------------------------------------------------------------------
 
-    // TODO: use unordered_map
     /*!
      * \brief Maps the names of reference to the names of font families they
      *        point to.
      */
-    std::map<arc::str::UTF8String, arc::str::UTF8String> m_family_refs;
+    std::unordered_map<arc::str::UTF8String, arc::str::UTF8String>
+        m_family_refs;
 };
 
 /*!
